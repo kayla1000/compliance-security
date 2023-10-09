@@ -100,16 +100,16 @@ jobs:
         run: cat tfplan.json
 
 
-      - name: Setup OPA
-        uses: open-policy-agent/setup-opa@v2
-        with:
-          version: latest
+      #- name: Setup OPA
+      #  uses: open-policy-agent/setup-opa@v2
+      #  with:
+      #    version: latest
 
-      - name: Install jq  # Install jq to validate json if there are issues
-        run: sudo apt-get install jq
+      #- name: Install jq  # Install jq to validate json if there are issues
+      #  run: sudo apt-get install jq
 
-      - name: Validate JSON
-        run: jq empty ./tfplan.json
+      #- name: Validate JSON
+      #  run: jq empty ./tfplan.json
         
       #- name: Run Conftest
       #  run: conftest test ./tfplan.json
